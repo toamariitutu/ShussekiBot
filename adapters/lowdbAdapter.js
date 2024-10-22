@@ -1,7 +1,7 @@
 import { Low } from 'lowdb'
 import { JSONFile } from 'lowdb/node'
 
-const adapter = new JSONFile('db/db.json')
+const adapter = new JSONFile('/db/db.json')
 const lowdb = new Low(adapter, { ReportChannel: {} })
 
 export async function getLowdbTable(tableName) {
