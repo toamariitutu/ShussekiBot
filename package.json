@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev-local": "node --env-file=.env.local index.js",
-    "dev-docker": "docker compose up -d --build",
-    "prod": "docker compose -f compose.yaml up -d --build",
+    "dev-docker": "docker compose -f compose.yaml -f compose.dev.yaml up -d --build",
+    "dev-docker:bind": "docker compose -f compose.yaml -f compose.dev.yaml -f compose.dev.bind.yaml up -d --build",
+    "prod": "docker compose up -d --build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",

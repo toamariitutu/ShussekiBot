@@ -30,7 +30,6 @@ USER node
 
 # Copy the rest of the source files into the image.
 COPY --chown=node:node . .
-COPY --chown=node:node ./db/db.json /db/db.json
 
 # Expose the port that the application listens on.
 EXPOSE 3000
