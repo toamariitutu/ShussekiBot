@@ -16,8 +16,8 @@ import {
   join,
   leave,
   getReportChannelId,
-} from "./db/adapter.js";
-import { getLowdbTable } from "./db/lowdbAdapter.js";
+} from "./adapters/adapter.js";
+import { getLodb, getLowdbTable } from "./adapters/lowdbAdapter.js";
 import {
   ACTIVITY_NAME,
   CLIENT_READY,
@@ -167,6 +167,11 @@ client.on(Events.MessageCreate, async message => {
         }
         return logChannel.send(`現在の${tableName}のデータです。\n\`\`\`\n${JSON.stringify(tableData, null, 2)}\n\`\`\``);
       }
+    }
+    if (message.content.includes("db.getAllData()")) {
+      const logChannel = await client.channels.fetch(config.channels.log);
+      const data = await getLodb();
+      return logChannel.send(`現在の全データです。\n\`\`\`\n${JSON.stringify(data, null, 2)}\n\`\`\``);
     }
     message.channel.send(MESSAGE_GENERAL);
   }

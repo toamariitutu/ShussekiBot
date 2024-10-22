@@ -4,6 +4,15 @@ import { JSONFile } from 'lowdb/node'
 const adapter = new JSONFile('db/db.json')
 const lowdb = new Low(adapter, { ReportChannel: {} })
 
+export async function getLodb() {
+  try {
+    await lowdb.read();
+    return lowdb.data
+  } catch(error) {
+    console.log("lowdb ERROR===", error);
+  }
+};
+
 export async function getLowdbTable(tableName) {
   try {
     await lowdb.read();
