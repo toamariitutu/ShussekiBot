@@ -1,6 +1,6 @@
 import * as Discord from "discord.js";
 import { successEmbed, errorEmbed, sendErrorLog } from "../../functions.js"
-import { setReportChannelId } from "../../db/adapter.js"
+import { setReportChannelId } from "../../adapters/adapter.js"
 import {
   REPO_CH_DESCRIPTION,
   REPO_CH_COMPLETE,

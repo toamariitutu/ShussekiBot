@@ -15,7 +15,7 @@ import {
   join,
   leave,
   getReportChannelId,
-} from "../../db/adapter.js";
+} from "../../adapters/adapter.js";
 import {
   SHUSSEKI_DESCRIPTION,
   SHUSSEKI_RECORDING_DESCRIPTION,

@@ -16,8 +16,8 @@ import {
   join,
   leave,
   getReportChannelId,
-} from "./db/adapter.js";
-import { getLowdbTable } from "./db/lowdbAdapter.js";
+} from "./adapters/adapter.js";
+import { getLowdbTable } from "./adapters/lowdbAdapter.js";
 import {
   ACTIVITY_NAME,
   CLIENT_READY,
